@@ -1,7 +1,7 @@
 import Hero from "./components/Hero";
 import Demo from "./components/Demo";
 
-import "../dist/output.css";
+import "./output.css";
 
 const App = () => {
   return (
