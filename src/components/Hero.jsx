@@ -11,7 +11,8 @@ const Hero = () => {
           onClick={() =>
             window.open("https://github.com/Bekoff257", "_blank")
           }
-          className='black_btn'
+          className='disabled_btn'
+          disabled
         >
           GitHub
         </button>
