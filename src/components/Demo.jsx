@@ -3,8 +3,11 @@ import { useEffect, useState } from "react"
 
 import { copy, linkIcon, loader, tick } from "../assets"
 import { useLazyGetSummaryQuery } from "../services/article"
+import { toast } from 'react-toastify';
+
 
 const Demo = () => {
+  const notify = () => toast.success("Article copied to clipboard!");
   const [ article, setArticle ] = useState({
     url: '',
     summary: '',
@@ -44,6 +47,7 @@ const Demo = () => {
     setCopied(copyUrl)
     navigator.clipboard.writeText(copyUrl)
     setTimeout(() => setCopied(false), 3000)
+    notify()
   }
 
   return (
@@ -119,6 +123,12 @@ const Demo = () => {
                       Article <span className="blue_gradient">Summary</span>
                     </h2>
                     <div className="summary_box">
+                    <div className="copy_btn" onClick={() => handleCopy(article.summary)}>
+                      <img 
+                        src={copied === article.summary ? tick : copy} 
+                        alt="copy_icon" 
+                        className="w-[40%] h-[40%] object-contain"/>
+                    </div>
                       <p className="font-inter font-medium text-sm text-gray-700">
                         {article.summary}
                       </p>

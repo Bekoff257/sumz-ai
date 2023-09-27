@@ -1,4 +1,7 @@
 import Hero from "./components/Hero";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Demo from "./components/Demo";
 
 import "./output.css";
@@ -14,6 +17,7 @@ const App = () => {
         <Hero />
         <Demo />
       </div>
+      <ToastContainer />
     </main>
   )
 }
