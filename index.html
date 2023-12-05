@@ -20,13 +20,17 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-  <script>
-    window.OneSignalDeferred = window.OneSignalDeferred || [];
-    OneSignalDeferred.push(function(OneSignal) {
-      OneSignal.init({
-        appId: "5fbe88ff-cb35-4309-ab2d-9d722fe31dce",
-      });
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(function(OneSignal) {
+    OneSignal.init({
+      appId: "5fbe88ff-cb35-4309-ab2d-9d722fe31dce",
+      safari_web_id: "web.onesignal.auto.5abdae74-1423-41c2-a45a-5cf3c8870ffd",
+      notifyButton: {
+        enable: true,
+      },
     });
-  </script>
+  });
+</script>
   </body>
 </html>
